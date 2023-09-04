@@ -12,6 +12,7 @@
 
 <body style="background-color: #c4c4c4 ;">
 
+
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
@@ -28,6 +29,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="index.html" href="#">Home</a>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
@@ -162,7 +164,7 @@
               }
             </script>
             <br>
-            <p><a class="link-opacity-50-hover" href="#">create your syq account</a></p>
+            <p><a class="link-opacity-50-hover" href="#signupModal">create your syq account</a></p>
           </form>
         </div>
         <div class="modal-footer" style="justify-content: center;text-align: center;">
@@ -221,7 +223,7 @@
             <button type="submit" class="btn btn-primary" style="margin-left: 40%;">Submit</button>
             <br>
             <br>
-            <p><a class="link-opacity-50-hover" style="margin-left: 5%" href="#">create your syq faculty
+            <p><a class="link-opacity-50-hover" style="margin-left: 5%" href="#signupModal">create your syq faculty
                 account</a></p>
           </form>
         </div>
@@ -237,65 +239,174 @@
  -->
 
 
-  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+
+  <div class="modal fade modal-md " id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true"
+    style="font-size:large;top: 4%;">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="signupModalLabel" style="margin:10px;">get syq account</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body">
+
           <div class="row g-3">
-            <div class="col-sm-6">
-              <label for="firstName" class="form-label">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
+            <form action="config.php" method="post">
 
-            <div class="col-sm-6">
-              <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-              <div class="invalid-feedback">
-                Valid last name is required.
-              </div>
-            </div>
 
-            <div class="col-12">
-              <label for="username" class="form-label">Username</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
-                <input type="text" class="form-control" id="username" placeholder="Username" required="">
-                <div class="invalid-feedback">
-                  Please enter a valid username.
+
+
+
+              <div class="container text-center">
+                <div class="row">
+
+                  <div class="col">
+                    <div class="col-sm-6">
+                      <label for="firstName" class="form-label">First name</label>
+                      <input type="text" class="form-control" id="firstName" name="firstName" placeholder="firstName"
+                        value="" required="text">
+                      <div class="invalid-feedback">
+                        Valid first name is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="col-sm-6">
+                      <label for="lastName" class="form-label">Last name</label>
+                      <input type="text" class="form-control" id="lastName" name="lastName" placeholder="lastName"
+                        value="" required="">
+                      <div class="invalid-feedback">
+                        Valid last name is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="col-12">
+                      <label for="username" class="form-label">Username</label>
+                      <div class="input-group has-validation">
+                        <span class="input-group-text">☯</span>
+                        <input type="text" class="form-control" id="userName" name="userName" placeholder="Username"
+                          required="">
+                        <div class="invalid-feedback">
+                          Please enter a valid username.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
-              </div>
-            </div>
 
-            <div class="col-12">
-              <label for="email" class="form-label">Email <span class="text-body-secondary"></span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
-              <div class="invalid-feedback">
-                Please enter a valid email address.
-              </div>
-            </div>
+                <br>
 
-            <div class="col-md-4">
-              <label for="validationServer01" class="form-label">First name</label>
-              <input type="tel" class="form-control is-invalid" id="validationServer01" value="9999999999" required>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback"> Please enter a valid mobile number.</div>
-            </div>
+                <div class="row">
 
+                  <div class="col">
+                    <label for="inputPassword5" class="form-label">Create Password</label>
+                    <input type="password" id="createPassword" name="createPassword" class="form-control"
+                      aria-describedby="passwordHelpBlock">
+
+                    <div id="passwordHelpBlock" class="form-text">
+                      Your password must be 8-20 characters long.
+
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <label for="inputPassword5" class="form-label">Confirm Password</label>
+                    <input type="password" id="inputPassword5" name="confirmPassword" class="form-control"
+                      aria-describedby="passwordHelpBlock">
+                    <div id="passwordHelpBlock" class="form-text">
+                      Your password must match which created by you.
+                    </div>
+                  </div>
+
+                </div>
+
+                <br>
+                <div class="row">
+
+                  <div class="col">
+                    <div class="gender">gender :
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                          value="male">
+                        <label class="form-check-label" for="inlineRadio1">male</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                          value="female">
+                        <label class="form-check-label" for="inlineRadio2">female</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                          value="other">
+                        <label class="form-check-label" for="inlineRadio2">other</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                  <div class="col">
+                    <div class="col-12">
+                      <label for="email" class="form-label">email <span class="text-body-secondary"></span></label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="xyz@example.com">
+                      <div class="invalid-feedback">
+                        Please enter a valid email address.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="col-md-4">
+                      <label for="validationServer01" class="form-label">mobileNumber</label>
+                      <input type="tel" class="form-control" id="mobileno" name="mobileno" value="9999999999"
+                        required="">
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback"> Please enter a valid mobile number.</div>
+                    </div>
+
+                  </div>
+                </div>
+                <br>
+
+                <div class="row">
+                  <div class="col">
+                    <button type="submit" class="btn btn-primary" value="submit">submit</button>
+                  </div>
+                </div>
+
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </form>
           </div>
-        </div>
-        <div class="modal-footer">
 
-          <button type="button" class="btn btn-primary">register</button>
         </div>
+
       </div>
     </div>
   </div>
@@ -356,36 +467,35 @@
   <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true"
     style="top: 14%;">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="feedbackModalLabel">Give your valuable feedback</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="form-floating">
-            <textarea class="form-control" placeholder="enter your feedback" id="floatingTextarea2"
-              style="height: 100px"></textarea>
-            <label for="floatingTextarea2">share your experience here</label>
-            <div class="rating feedback" style="margin-top: 10px;margin-bottom: 10px;text-align: center;">Give rating to
-              syq :
-              <br>
-              <br>
-              <button type="button" class="btn btn-danger">1</button>
-              <button type="button" class="btn btn-warning" style="margin-left: 10px;">2</button>
-              <button type="button" class="btn btn-info" style="margin-left: 10px;">3</button>
-              <button type="button" class="btn btn-primary" style="margin-left: 10px;">4</button>
-              <button type="button" class="btn btn-success" style="margin-left: 10px;">5</button>
+      <form>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="feedbackModalLabel">Give your valuable feedback</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
 
+          <div class="modal-body">
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="enter your feedback" id="floatingTextarea2"
+                style="height: 100px"></textarea>
+              <label for="floatingTextarea2">share your experience here</label>
+              <div class="rating feedback" style="margin-top: 10px;margin-bottom: 10px;text-align: center;">Give rating
+                to
+                syq :
+                <br>
+
+                <button type="submit" class="btn btn-outline-danger " style="size: 10px;">👺</button>
+                <button type="submit" class="btn btn-outline-warning" style="margin-left: 10px;size: 10px;">😞</button>
+                <button type="submit" class="btn btn-outline-info" style="margin-left: 10px;size: 10px;">🥸</button>
+                <button type="submit" class="btn btn-outline-primary" style="margin-left: 10px;size: 10px;">😌</button>
+                <button type="submit" class="btn btn-outline-success" style="margin-left: 10px;size: 10px;">🤩</button>
+
+              </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
 
-          <button type="button" class="btn btn-primary">send feedback
-
-          </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 
@@ -395,7 +505,7 @@
 
 
 
- 
+
 
 
 
@@ -430,8 +540,10 @@
             <li class="nav-item mb-2"><a href="htmlcss.html" class="nav-link p-0 text-body-secondary">html/css</a></li>
             <li class="nav-item mb-2"><a href="js.html" class="nav-link p-0 text-body-secondary">javascript</a></li>
             <li class="nav-item mb-2"><a href="mongodb.html" class="nav-link p-0 text-body-secondary">mongo db</a></li>
-            <li class="nav-item mb-2"><a href="bootstrap.html" class="nav-link p-0 text-body-secondary">bootstrap</a></li>
-            <li class="nav-item mb-2"><a href="reactjs_nextjs.html" class="nav-link p-0 text-body-secondary">react/next js</a>
+            <li class="nav-item mb-2"><a href="bootstrap.html" class="nav-link p-0 text-body-secondary">bootstrap</a>
+            </li>
+            <li class="nav-item mb-2"><a href="reactjs_nextjs.html" class="nav-link p-0 text-body-secondary">react/next
+                js</a>
             </li>
           </ul>
         </div>
@@ -441,9 +553,12 @@
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="maths.html" class="nav-link p-0 text-body-secondary">maths</a></li>
             <li class="nav-item mb-2"><a href="python.html" class="nav-link p-0 text-body-secondary">python</a></li>
-            <li class="nav-item mb-2"><a href="Dsapython.html" class="nav-link p-0 text-body-secondary">DSA with python</a></li>
-            <li class="nav-item mb-2"><a href="pythonlib.html" class="nav-link p-0 text-body-secondary">python library</a></li>
-            <li class="nav-item mb-2"><a href="cybersec.html" class="nav-link p-0 text-body-secondary">cyber security</a></li>
+            <li class="nav-item mb-2"><a href="Dsapython.html" class="nav-link p-0 text-body-secondary">DSA with
+                python</a></li>
+            <li class="nav-item mb-2"><a href="pythonlib.html" class="nav-link p-0 text-body-secondary">python
+                library</a></li>
+            <li class="nav-item mb-2"><a href="cybersec.html" class="nav-link p-0 text-body-secondary">cyber
+                security</a></li>
           </ul>
         </div>
 
@@ -451,20 +566,27 @@
           <h5>App develoapment</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="java.html" class="nav-link p-0 text-body-secondary">java</a></li>
-            <li class="nav-item mb-2"><a href="A-java.html" class="nav-link p-0 text-body-secondary">advanced java</a></li>
-            <li class="nav-item mb-2"><a href="Astudio.html" class="nav-link p-0 text-body-secondary">android studio</a></li>
-            <li class="nav-item mb-2"><a href="Dsajava.html" class="nav-link p-0 text-body-secondary">DSA with java</a></li>
+            <li class="nav-item mb-2"><a href="A-java.html" class="nav-link p-0 text-body-secondary">advanced java</a>
+            </li>
+            <li class="nav-item mb-2"><a href="Astudio.html" class="nav-link p-0 text-body-secondary">android studio</a>
+            </li>
+            <li class="nav-item mb-2"><a href="Dsajava.html" class="nav-link p-0 text-body-secondary">DSA with java</a>
+            </li>
             <li class="nav-item mb-2"><a href="javafx.html" class="nav-link p-0 text-body-secondary">javafx</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-2 mb-3">
           <h5>other</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="os.html" class="nav-link p-0 text-body-secondary">operating system</a></li>
-            <li class="nav-item mb-2"><a href="dsac++.html" class="nav-link p-0 text-body-secondary">DSA with c++</a></li>
+            <li class="nav-item mb-2"><a href="os.html" class="nav-link p-0 text-body-secondary">operating system</a>
+            </li>
+            <li class="nav-item mb-2"><a href="dsac++.html" class="nav-link p-0 text-body-secondary">DSA with c++</a>
+            </li>
             <li class="nav-item mb-2"><a href="dbms.html" class="nav-link p-0 text-body-secondary">DBMS</a></li>
-            <li class="nav-item mb-2"><a href="CN.html" class="nav-link p-0 text-body-secondary">COMPUTER NETWORK</a></li>
-            <li class="nav-item mb-2"><a href="SE.html" class="nav-link p-0 text-body-secondary">software engineering</a>
+            <li class="nav-item mb-2"><a href="CN.html" class="nav-link p-0 text-body-secondary">COMPUTER NETWORK</a>
+            </li>
+            <li class="nav-item mb-2"><a href="SE.html" class="nav-link p-0 text-body-secondary">software
+                engineering</a>
             </li>
           </ul>
         </div>
